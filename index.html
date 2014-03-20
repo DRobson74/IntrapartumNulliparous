@@ -36,7 +36,6 @@ function calculate() {
 	var NorthAfricaMiddleEast;		// North Africa & Middle East
 	var SouthernCentralAsia;		// Southern Central Asia
 	var SubSaharanAfrica;			// Sub Saharan Africa
-	var NorthWestEurope;			// North West Europe
 	var SouthEastAsia;			// South East Asia
 	var NoneoftheAbove1;			// None of the Above
 	var AntenatalCare		= 0;	// Antenatal Care Used
@@ -119,42 +118,31 @@ radioButton = document.getElementById("MaternalCountryofBirth" + i);
 		MaternalCountryofBirth = radioButton.value;
 		if (MaternalCountryofBirth ==1) {
 		NorthAfricaMiddleEast =1;
-		NorthWestEurope =0;
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
 		SouthEastAsia =0;
 		}
 		if (MaternalCountryofBirth ==2) {
 		NorthAfricaMiddleEast =0; 
-		NorthWestEurope =1;
-		SouthernCentralAsia =0;
-		SubSaharanAfrica =0;
-		SouthEastAsia =0;
-		}
-		if (MaternalCountryofBirth ==3) {
-		NorthAfricaMiddleEast =0; 
 		NorthWestEurope =0;
 		SouthernCentralAsia =1;
 		SubSaharanAfrica =0;
 		SouthEastAsia =0;
 		}
-		if (MaternalCountryofBirth ==4) {
+		if (MaternalCountryofBirth ==3) {
 		NorthAfricaMiddleEast =0;
-		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =1;
 		SouthEastAsia =0;
 			}
-		if (MaternalCountryofBirth ==5) {
+		if (MaternalCountryofBirth ==4) {
 		NorthAfricaMiddleEast =0;
-		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
 		SouthEastAsia =1;
 			}
-		if (MaternalCountryofBirth ==6) {
+		if (MaternalCountryofBirth ==5) {
 		NorthAfricaMiddleEast =0;
-		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
 		SouthEastAsia =0;
@@ -610,12 +598,11 @@ alert("Your likelihood of caesarean section delivery is " + likelihood + "%.");
 
 <p> Maternal Country of Birth:<br />
 <input type ="radio" id="MaternalCountryofBirth1" name = "MaternalCountryofBirth" value="1">North Africa & Middle East<br>
-<input type ="radio" id="MaternalCountryofBirth2" name = "MaternalCountryofBirth" value="2">North West Europe<br>
-<input type ="radio" id="MaternalCountryofBirth3" name = "MaternalCountryofBirth" value="3">South & Central Asia<br>
-<input type ="radio" id="MaternalCountryofBirth4" name = "MaternalCountryofBirth" value="4">
+<input type ="radio" id="MaternalCountryofBirth3" name = "MaternalCountryofBirth" value="2">South & Central Asia<br>
+<input type ="radio" id="MaternalCountryofBirth4" name = "MaternalCountryofBirth" value="3">
 Sub-saharan Africa<br>
-<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="5">South East Asia<br>
-<input type ="radio" id="MaternalCountryofBirth6" name = "MaternalCountryofBirth" value="6">None of the Above<br>
+<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="4">South East Asia<br>
+<input type ="radio" id="MaternalCountryofBirth6" name = "MaternalCountryofBirth" value="5">None of the Above<br>
 </p>
 
 
