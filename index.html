@@ -38,7 +38,7 @@ function calculate() {
 	var SouthernCentralAsia;		// Southern Central Asia
 	var SubSaharanAfrica;			// Sub Saharan Africa
 	var NorthWestEurope;			// North West Europe
-	var NorthEastAsia;			// North East Asia
+	var SouthEastAsia;			// South East Asia
 	var NoneoftheAbove1;			// None of the Above
 	var AntenatalCare		= 0;	// Antenatal Care Used
 	var PrivateMidwife;			// Private Midwife
@@ -136,42 +136,42 @@ radioButton = document.getElementById("MaternalCountryofBirth" + i);
 		NorthWestEurope =0;
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
-		NorthEastAsia =0;
+		SouthEastAsia =0;
 		}
 		if (MaternalCountryofBirth ==2) {
 		NorthAfricaMiddleEast =0; 
 		NorthWestEurope =1;
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
-		NorthEastAsia =0;
+		SouthEastAsia =0;
 		}
 		if (MaternalCountryofBirth ==3) {
 		NorthAfricaMiddleEast =0; 
 		NorthWestEurope =0;
 		SouthernCentralAsia =1;
 		SubSaharanAfrica =0;
-		NorthEastAsia =0;
+		SouthEastAsia =0;
 		}
 		if (MaternalCountryofBirth ==4) {
 		NorthAfricaMiddleEast =0;
 		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =1;
-		NorthEastAsia =0;
+		SouthEastAsia =0;
 			}
 		if (MaternalCountryofBirth ==5) {
 		NorthAfricaMiddleEast =0;
 		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
-		NorthEastAsia =1;
+		SouthEastAsia =1;
 			}
 		if (MaternalCountryofBirth ==6) {
 		NorthAfricaMiddleEast =0;
 		NorthWestEurope =0; 
 		SouthernCentralAsia =0;
 		SubSaharanAfrica =0;
-		NorthEastAsia =0;
+		SouthEastAsia =0;
 		NoneoftheAbove1 =1;
 		}
 		
@@ -524,7 +524,7 @@ if (Presentation == 0) {
 
 //Calculate LIKELIHOOD.
 
-varx = -0.316 + 0.775 + (0.047*Age) + (0.083*IndigenousorTorresStraitIslander)+ (-0.110*Smoker) + (0.205*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.183*NorthEastAsia) + (-0.088*NorthWestEurope) + (0.402*SouthernCentralAsia) + (0.190*SubSaharanAfrica) + (0.405*DeliveryataPrivateHospital) + (-0.492*PrivateMidwife) +
+varx = -0.316 + 0.775 + (0.047*Age) + (0.083*IndigenousorTorresStraitIslander)+ (-0.110*Smoker) + (0.205*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.183*SouthEastAsia) + (-0.088*NorthWestEurope) + (0.402*SouthernCentralAsia) + (0.190*SubSaharanAfrica) + (0.405*DeliveryataPrivateHospital) + (-0.492*PrivateMidwife) +
 (-0.552*PublicMidwife) + (-0.198*PublicMedPrac) + (-0.508*GP) + (0.254*Asthma) + (0.204*Depression) + (0.446*PreexistingHypertension) + (1.551*TypeIDiabetesMellitus) + (1.017*TypeIIDiabetesMellitus) + (-0.417*InducedLabour)+ (AROM*-0.839) + (0.198*Prost) + + (-0.873*CTG) + (-0.763*FSE) + (0.225*GD) + + (0.540*GestHTN) + (PreEc*0.981) + (AH*0.292) + (-1.643*NPA) + (-0.059*PA)  + (2.484*Breech) + (2.481*Brow) + (1.356*Face) + (3.040*Shoulder);
 
 vary = 1 + Math.exp(varx)
