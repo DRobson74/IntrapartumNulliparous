@@ -39,19 +39,14 @@ function calculate() {
 	var SouthEastAsia;			// South East Asia
 	var NoneoftheAbove1;			// None of the Above
 	var AntenatalCare		= 0;	// Antenatal Care Used
-	var PrivateMidwife;			// Private Midwife
 	var PublicMidwife;			// Public Midwife
 	var GP;					// GP
-	var PublicMedPrac;			// Public Medical Practitioner
 	var NoneoftheAbove2;			// None of the Above
 	var DeliveryataPrivateHospital	= 2; 	// Delivery at a Private Hospital
 	var likelihood;				// Actual prediction of CSD
 	var Asthma			= 2;	// Asthma
-	var Depression			= 2;	// Depression
-	var PreexistingHypertension	= 2;	// Pre-existingHypertension
 	var TypeIDiabetesMellitus	= 2;	// Type I Diabetes Mellitus
 	var TypeIIDiabetesMellitus	= 2;	// Type II Diabetes Mellitus
-	var AH				= 2;	// Antepartum Haemorrhage
 	var NPA				= 2;	// Non-Pharmacological Analgesia
 	var PA				= 2;	// Pharmacological Analgesia
 	var CTG				= 2;	// CTG
@@ -59,8 +54,6 @@ function calculate() {
 	var GD				= 2;	// GD
 	var PreEc			= 2;	// PreEc
 	var GestHTN			= 2;	// GestHTN
-	var AH				= 2;	// Antepartum Haemorrhage
-	var InducedLabour		= 2;	// Induced Labour
 	var AROM 			= 2;	// Artificial Rupture of Membranes
 	var Prost			= 2;	// Prostaglandins
 	var Presentation		= 0;	// Presentation
@@ -111,7 +104,7 @@ if (AssistedConception == 2) {
 
 
 // Checks to see which radiobutton is selected in MaternalCountryofBirth.
-for (i = 1; i <= 6; i++) {
+for (i = 1; i <= 5; i++) {
 radioButton = document.getElementById("MaternalCountryofBirth" + i);
 	if (radioButton.checked == true) {
 		//Assigns value according to which radio button was selected.
@@ -124,7 +117,6 @@ radioButton = document.getElementById("MaternalCountryofBirth" + i);
 		}
 		if (MaternalCountryofBirth ==2) {
 		NorthAfricaMiddleEast =0; 
-		NorthWestEurope =0;
 		SouthernCentralAsia =1;
 		SubSaharanAfrica =0;
 		SouthEastAsia =0;
@@ -175,39 +167,21 @@ if (DeliveryataPrivateHospital == 2) {
 
 
 // Checks to see which radiobutton is selected in AntenatalCare.
-for (i = 1; i <= 5; i++) {
+for (i = 1; i <= 3; i++) {
 radioButton = document.getElementById("AntenatalCare" + i);
 	if (radioButton.checked == true) {
 		//Assigns value according to which radio button was selected.
 		AntenatalCare = radioButton.value; 
 		if (AntenatalCare ==1) {
-			PrivateMidwife = 1;
-			PublicMidwife =0;
-			PublicMedPrac =0;
+			PublicMidwife =1;
 			GP =0;
 		}
 		if (AntenatalCare ==2) {
-			PrivateMidwife = 0;
-			PublicMidwife =1;
-			PublicMedPrac =0;
-			GP =0;
-		}
-		if (AntenatalCare ==3) {
-			PrivateMidwife = 0;
 			PublicMidwife =0;
-			PublicMedPrac =0;
 			GP =1;
 		}
-		if (AntenatalCare ==4) {
-			PrivateMidwife = 0;
+		if (AntenatalCare ==3) {
 			PublicMidwife =0;
-			PublicMedPrac =1;
-			GP =0;
-		}
-		if (AntenatalCare ==5) {
-			PrivateMidwife = 0;
-			PublicMidwife =0;
-			PublicMedPrac =0;
 			GP =0;
 			NoneoftheAbove2 =1;
 		}
@@ -234,37 +208,6 @@ if (Asthma == 2) {
 }
 
 
-
-// Checks to see which radiobutton is selected in Depression.
-	for (i = 1; i <= 2; i++) {				
-	radioButton = document.getElementById("Depression" + i);
-		if (radioButton.checked == true) {
-			// Assigns value according to which radio button was selected.
-			Depression = radioButton.value; 
-		}
-	}
-if (Depression == 2) {
-	alert ("No Depression status selected!");
-	return;
-}
-
-
-
-// Checks to see which radiobutton is selected in PreexistingHypertension.
-	for (i = 1; i <= 2; i++) {				
-	radioButton = document.getElementById("PreexistingHypertension" + i);
-		if (radioButton.checked == true) {
-			// Assigns value according to which radio button was selected.
-			PreexistingHypertension = radioButton.value; 
-		}
-	}
-if (PreexistingHypertension == 2) {
-	alert ("No Pre-existing Hypertension status selected!");
-	return;
-}
-
-
-
 // Checks to see which radiobutton is selected in TypeIDiabetesMellitus.
 	for (i = 1; i <= 2; i++) {				
 	radioButton = document.getElementById("TypeIDiabetesMellitus" + i);
@@ -279,8 +222,6 @@ if (TypeIDiabetesMellitus == 2) {
 }
 
 
-
-
 // Checks to see which radiobutton is selected in TypeIIDiabetesMellitus.
 	for (i = 1; i <= 2; i++) {				
 	radioButton = document.getElementById("TypeIIDiabetesMellitus" + i);
@@ -291,20 +232,6 @@ if (TypeIDiabetesMellitus == 2) {
 	}
 if (TypeIIDiabetesMellitus == 2) {
 	alert ("No Type II Diabetes Mellitus status selected!");
-	return;
-}
-
-
-// Checks to see which radiobutton is selected in InducedLabour.
-	for (i = 1; i <= 2; i++) {				
-	radioButton = document.getElementById("InducedLabour" + i);
-		if (radioButton.checked == true) {
-			// Assigns value according to which radio button was selected.
-			InducedLabour = radioButton.value; 
-		}
-	}
-if (InducedLabour == 2) {
-	alert ("No Induced Labour status selected!");
 	return;
 }
 
@@ -436,19 +363,6 @@ if (GD == 2) {
 }
 
 
-// Checks to see which radiobutton is selected in AH.
-	for (i = 1; i <= 2; i++) {				
-	radioButton = document.getElementById("AH" + i);
-		if (radioButton.checked == true) {
-			// Assigns value according to which radio button was selected.
-			AH = radioButton.value; 
-		}
-	}
-if (AH == 2) {
-	alert ("No Antepartum Haemorrhage status selected!");
-	return;
-}
-
 
 // Checks to see which radiobutton is selected in Presentation.
 for (i = 1; i <= 5; i++) {
@@ -498,8 +412,8 @@ if (Presentation == 0) {
 
 //Calculate LIKELIHOOD.
 
-varx = -0.316 + 0.775 + (0.047*Age) + (0.083*IndigenousorTorresStraitIslander) + (0.205*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.183*SouthEastAsia) + (-0.088*NorthWestEurope) + (0.402*SouthernCentralAsia) + (0.190*SubSaharanAfrica) + (0.405*DeliveryataPrivateHospital) + (-0.492*PrivateMidwife) +
-(-0.552*PublicMidwife) + (-0.198*PublicMedPrac) + (-0.508*GP) + (0.254*Asthma) + (0.204*Depression) + (0.446*PreexistingHypertension) + (1.551*TypeIDiabetesMellitus) + (1.017*TypeIIDiabetesMellitus) + (-0.417*InducedLabour)+ (AROM*-0.839) + (0.198*Prost) + + (-0.873*CTG) + (-0.763*FSE) + (0.225*GD) + + (0.540*GestHTN) + (PreEc*0.981) + (AH*0.292) + (-1.643*NPA) + (-0.059*PA)  + (2.484*Breech) + (2.481*Brow) + (1.356*Face) + (3.040*Shoulder);
+varx = -1.101 + (0.0643*Age) + (0.211*IndigenousorTorresStraitIslander) + (0.174*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.168*SouthEastAsia) + (0.334*SouthernCentralAsia) + (0.212*SubSaharanAfrica) + (0.457*DeliveryataPrivateHospital) +
+(-0.194*PublicMidwife) + (-0.287*GP) + (0.191*Asthma) + (1.03*TypeIDiabetesMellitus) + (0.742*TypeIIDiabetesMellitus) +  (AROM*-0.278) + (0.259*Prost) + + (-0.266*CTG) + (-0.661*FSE) + (0.122*GD) + (0.396*GestHTN) + (PreEc*0.739) + (-1.133*NPA) + (-0.313*PA)  + (2.88*Breech) + (2.59*Brow) + (1.99*Face) + (2.21*Shoulder);
 
 vary = 1 + Math.exp(varx)
 
@@ -598,11 +512,11 @@ alert("Your likelihood of caesarean section delivery is " + likelihood + "%.");
 
 <p> Maternal Country of Birth:<br />
 <input type ="radio" id="MaternalCountryofBirth1" name = "MaternalCountryofBirth" value="1">North Africa & Middle East<br>
-<input type ="radio" id="MaternalCountryofBirth3" name = "MaternalCountryofBirth" value="2">South & Central Asia<br>
-<input type ="radio" id="MaternalCountryofBirth4" name = "MaternalCountryofBirth" value="3">
+<input type ="radio" id="MaternalCountryofBirth2" name = "MaternalCountryofBirth" value="2">South & Central Asia<br>
+<input type ="radio" id="MaternalCountryofBirth3" name = "MaternalCountryofBirth" value="3">
 Sub-saharan Africa<br>
-<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="4">South East Asia<br>
-<input type ="radio" id="MaternalCountryofBirth6" name = "MaternalCountryofBirth" value="5">None of the Above<br>
+<input type ="radio" id="MaternalCountryofBirth4" name = "MaternalCountryofBirth" value="4">South East Asia<br>
+<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="5">None of the Above<br>
 </p>
 
 
@@ -613,28 +527,14 @@ Sub-saharan Africa<br>
 
 
 <p> Antenatal Care:<br />
-<input type ="radio" id="AntenatalCare1" name = "AntenatalCare" value="1">Private Midwife<br>
-<input type ="radio" id="AntenatalCare2" name = "AntenatalCare" value="2">Public Midwife<br>
-<input type ="radio" id="AntenatalCare3" name = "AntenatalCare" value="3">GP<br>
-<input type ="radio" id="AntenatalCare4" name = "AntenatalCare" value="4">Public Medical Practitioner<br>
-<input type ="radio" id="AntenatalCare5" name ="AntenatalCare" value="5">None of the Above<br>
+<input type ="radio" id="AntenatalCare1" name = "AntenatalCare" value="1">Public Midwife<br>
+<input type ="radio" id="AntenatalCare2" name = "AntenatalCare" value="2">GP<br>
+<input type ="radio" id="AntenatalCare3" name ="AntenatalCare" value="3">None of the Above<br>
 </p>
 
 <p> Asthma:<br />
 <input type="radio" id="Asthma1" name = "Asthma" value="1">Yes<br>
 <input type="radio" id="Asthma2" name = "Asthma" value="0">No<br>
-</p>
-
-
-<p> Depression:<br />
-<input type="radio" id="Depression1" name = "Depression" value="1">Yes<br>
-<input type="radio" id="Depression2" name = "Depression" value="0">No<br>
-</p>
-
-
-<p> Pre-existing Hypertension:<br />
-<input type="radio" id="PreexistingHypertension1" name = "PreexistingHypertension" value="1">Yes<br>
-<input type="radio" id="PreexistingHypertension2" name = "PreexistingHypertension" value="0">No<br>
 </p>
 
 
@@ -647,11 +547,6 @@ Sub-saharan Africa<br>
 <p> Type II Diabetes Mellitus:<br />
 <input type="radio" id="TypeIIDiabetesMellitus1" name = "TypeIIDiabetesMellitus" value="1">Yes<br>
 <input type="radio" id="TypeIIDiabetesMellitus2" name = "TypeIIDiabetesMellitus" value="0">No<br>
-</p>
-
-<p> Induced Labour:<br />
-<input type="radio" id="InducedLabour1" name = "InducedLabour" value="1">Yes<br>
-<input type="radio" id="InducedLabour2" name = "InducedLabour" value="0">No<br>
 </p>
 
 
@@ -702,10 +597,6 @@ Sub-saharan Africa<br>
 <input type="radio" id="GD2" name = "GD" value="0">No<br>
 </p>
 
-<p> Antepartum Haemorrhage:<br />
-<input type="radio" id="AH1" name = "AH" value="1">Yes<br>
-<input type="radio" id="AH2" name = "AH" value="0">No<br>
-</p>
 
 <p> Presentation:<br />
 <input type ="radio" id="Presentation1" name = "Presentation" value="1">Breech<br>
