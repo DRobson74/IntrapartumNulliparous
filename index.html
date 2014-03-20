@@ -31,7 +31,6 @@ function calculate() {
 	var button;				// Used to select a yes or no answer
 	var selectedAge;			// Age of the Mother
 	var IndigenousorTorresStraitIslander = 2;// Indigenous or Torres Strait Islander Mother
-	var Smoker			= 2;	// Smoking Status	
 	var AssistedConception			// Assisted Conception
 	var MaternalCountryofBirth	= 0; 	// Maternal Country of Birth
 	var NorthAfricaMiddleEast;		// North Africa & Middle East
@@ -93,20 +92,7 @@ radioButton = document.getElementById("indig" + i);
 if (IndigenousorTorresStraitIslander == 2) {
 		alert("No Indigenous status selected!");
 		return;
-}
 
- 
-// Checks to see which radiobutton is selected in Smoker.
-for (i = 1; i <= 2; i++) {				
-radioButton = document.getElementById("smoker" + i);
-	if (radioButton.checked == true) {
-		// Assigns value according to which radio button was selected.
-		Smoker = radioButton.value; 
-	}
-}
-if (Smoker == 2) {
-		alert("No Smoker status selected!");
-		return;
 }
 
 
@@ -524,7 +510,7 @@ if (Presentation == 0) {
 
 //Calculate LIKELIHOOD.
 
-varx = -0.316 + 0.775 + (0.047*Age) + (0.083*IndigenousorTorresStraitIslander)+ (-0.110*Smoker) + (0.205*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.183*SouthEastAsia) + (-0.088*NorthWestEurope) + (0.402*SouthernCentralAsia) + (0.190*SubSaharanAfrica) + (0.405*DeliveryataPrivateHospital) + (-0.492*PrivateMidwife) +
+varx = -0.316 + 0.775 + (0.047*Age) + (0.083*IndigenousorTorresStraitIslander) + (0.205*AssistedConception) + (-0.180*NorthAfricaMiddleEast) + (-0.183*SouthEastAsia) + (-0.088*NorthWestEurope) + (0.402*SouthernCentralAsia) + (0.190*SubSaharanAfrica) + (0.405*DeliveryataPrivateHospital) + (-0.492*PrivateMidwife) +
 (-0.552*PublicMidwife) + (-0.198*PublicMedPrac) + (-0.508*GP) + (0.254*Asthma) + (0.204*Depression) + (0.446*PreexistingHypertension) + (1.551*TypeIDiabetesMellitus) + (1.017*TypeIIDiabetesMellitus) + (-0.417*InducedLabour)+ (AROM*-0.839) + (0.198*Prost) + + (-0.873*CTG) + (-0.763*FSE) + (0.225*GD) + + (0.540*GestHTN) + (PreEc*0.981) + (AH*0.292) + (-1.643*NPA) + (-0.059*PA)  + (2.484*Breech) + (2.481*Brow) + (1.356*Face) + (3.040*Shoulder);
 
 vary = 1 + Math.exp(varx)
@@ -616,10 +602,6 @@ alert("Your likelihood of caesarean section delivery is " + likelihood + "%.");
 <input type = "radio" id="indig2" name = "indig" value="0">No<br>
 </p>
 
-<p> Smoker:<br />
-<input type="radio" id="smoker1" name = "smoker" value="1">Yes<br>
-<input type ="radio" id="smoker2" name = "smoker" value="0">No<br>
-</p>
 
 <p> Assisted Conception:<br />
 <input type="radio" id="AssistedConception1" name = "AssistedConception" value="1">Yes<br> 
@@ -632,7 +614,7 @@ alert("Your likelihood of caesarean section delivery is " + likelihood + "%.");
 <input type ="radio" id="MaternalCountryofBirth3" name = "MaternalCountryofBirth" value="3">South & Central Asia<br>
 <input type ="radio" id="MaternalCountryofBirth4" name = "MaternalCountryofBirth" value="4">
 Sub-saharan Africa<br>
-<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="5">North East Asia<br>
+<input type ="radio" id="MaternalCountryofBirth5" name = "MaternalCountryofBirth" value="5">South East Asia<br>
 <input type ="radio" id="MaternalCountryofBirth6" name = "MaternalCountryofBirth" value="6">None of the Above<br>
 </p>
 
